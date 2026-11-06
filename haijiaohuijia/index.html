@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>海角回家地址-海角回家地址最新入口_海角社区访问方法</title>
+<meta name="description" content="海角回家地址页面说明海角社区访问入口的常见查找方式，介绍官方发布页、备用线路与访问异常的应对思路，帮助访问者快速定位海角回家地址并顺畅进入社区。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d1f2b'/%3E%3Cpath d='M14 40 L32 18 L50 40' stroke='%2340d6c4' stroke-width='5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='32' cy='47' r='5' fill='%23f2b134'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#0d1f2b;
+  --ink-2:#16323f;
+  --paper:#f7f4ee;
+  --card:#ffffff;
+  --teal:#0f9b8e;
+  --teal-deep:#0a6f66;
+  --amber:#f2b134;
+  --muted:#5c6b73;
+  --line:#e2ddd3;
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  background:var(--paper);
+  color:var(--ink-2);
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--teal-deep);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+img,svg{display:block;max-width:100%}
+
+/* header */
+header.site{
+  background:var(--ink);
+  color:#eaf4f1;
+  position:sticky;top:0;z-index:50;
+  border-bottom:2px solid var(--teal);
+}
+.nav-inner{
+  display:flex;align-items:center;gap:18px;
+  min-height:66px;flex-wrap:wrap;
+}
+.logo{
+  display:flex;align-items:center;gap:10px;
+  color:#fff;font-weight:700;font-size:18px;letter-spacing:.5px;
+  white-space:nowrap;
+}
+.logo:hover{text-decoration:none}
+.logo .mark{width:32px;height:32px;flex:0 0 32px}
+nav.main{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
+nav.main a{
+  color:#cfe3de;font-size:15px;padding:7px 12px;border-radius:8px;
+  transition:background .18s,color .18s;
+}
+nav.main a:hover{background:rgba(64,214,196,.15);color:#fff;text-decoration:none}
+
+/* hero */
+.hero{
+  background:
+    radial-gradient(900px 360px at 88% -10%, rgba(15,155,142,.30), transparent 62%),
+    radial-gradient(600px 300px at 4% 110%, rgba(242,177,52,.16), transparent 60%),
+    linear-gradient(160deg,#0d1f2b 0%,#123141 58%,#0d2a33 100%);
+  color:#eaf4f1;
+  padding:58px 0 54px;
+  border-bottom:1px solid #0a1c26;
+}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;letter-spacing:2px;color:var(--amber);
+  border:1px solid rgba(242,177,52,.45);border-radius:999px;
+  padding:4px 14px;margin-bottom:18px;
+}
+h1{
+  font-size:clamp(28px,4.4vw,44px);
+  line-height:1.25;font-weight:800;letter-spacing:1px;color:#fff;
+  margin-bottom:16px;
+}
+.hero p.lead{font-size:16.5px;color:#c3d8d4;max-width:36em;margin-bottom:26px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:15.5px;font-weight:600;
+  padding:12px 22px;border-radius:10px;
+  border:1px solid transparent;cursor:pointer;
+  transition:transform .16s,background .18s,border-color .18s;
+}
+.btn:hover{text-decoration:none;transform:translateY(-1px)}
+.btn-primary{background:var(--teal);color:#04262a}
+.btn-primary:hover{background:#2fc0ae;color:#04262a}
+.btn-ghost{background:transparent;color:#eaf4f1;border-color:rgba(234,244,241,.35)}
+.btn-ghost:hover{border-color:var(--amber);color:var(--amber)}
+.btn[aria-disabled="true"]{opacity:.6;pointer-events:none;cursor:default}
+.hero-figure{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(64,214,196,.25);
+  border-radius:18px;padding:18px;
+}
+.hero-figure figcaption{
+  font-size:13px;color:#9fbab5;margin-top:12px;text-align:center;letter-spacing:.5px;
+}
+.status-row{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px;
+}
+.status-row div{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);
+  border-radius:10px;padding:10px 8px;text-align:center;
+}
+.status-row b{display:block;color:#fff;font-size:15px}
+.status-row span{font-size:12px;color:#9fbab5}
+
+/* section base */
+section{padding:56px 0}
+.section-head{margin-bottom:28px;max-width:44em}
+.kicker{
+  font-size:13px;letter-spacing:2.4px;color:var(--teal-deep);
+  text-transform:uppercase;font-weight:700;margin-bottom:8px;
+}
+h2{font-size:clamp(22px,2.9vw,29px);line-height:1.35;color:var(--ink);font-weight:800;margin-bottom:10px}
+.section-head p{color:var(--muted);font-size:15.5px}
+
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 22px;
+  box-shadow:0 2px 0 rgba(13,31,43,.04);
+  display:flex;flex-direction:column;gap:10px;
+}
+.card .ico{
+  width:44px;height:44px;border-radius:11px;background:#e9f6f3;
+  display:flex;align-items:center;justify-content:center;margin-bottom:2px;
+}
+.card h3{font-size:18px;color:var(--ink);font-weight:700}
+.card p{font-size:14.6px;color:var(--muted)}
+.card .tag{
+  align-self:flex-start;font-size:12.5px;color:var(--teal-deep);
+  background:#e9f6f3;border-radius:999px;padding:3px 11px;margin-top:auto;
+}
+
+/* steps */
+.steps-wrap{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:st}
+.step{
+  position:relative;background:var(--paper);border:1px solid var(--line);
+  border-radius:var(--radius);padding:22px 18px 20px;
+}
+.step::before{
+  counter-increment:st;content:counter(st,decimal-leading-zero);
+  font-size:13px;font-weight:800;letter-spacing:1px;color:#fff;
+  background:var(--teal);border-radius:8px;padding:2px 9px;
+  display:inline-block;margin-bottom:10px;
+}
+.step h3{font-size:16.5px;color:var(--ink);margin-bottom:6px}
+.step p{font-size:14.4px;color:var(--muted)}
+
+/* article + aside */
+.split{display:grid;grid-template-columns:1.6fr .9fr;gap:36px;align-items:start}
+article.prose h2{margin-bottom:14px}
+article.prose h3{font-size:18px;color:var(--ink);margin:22px 0 8px;font-weight:700}
+article.prose p{font-size:15.6px;color:#33484f;margin-bottom:14px}
+article.prose ul{margin:0 0 14px 20px}
+article.prose li{font-size:15.4px;color:#33484f;margin-bottom:8px}
+.note{
+  border-left:4px solid var(--amber);background:#fdf6e6;
+  border-radius:0 10px 10px 0;padding:14px 18px;font-size:14.8px;color:#5a4a1e;
+  margin:18px 0;
+}
+aside.side{display:flex;flex-direction:column;gap:18px;position:sticky;top:86px}
+.panel{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;
+}
+.panel h3{font-size:16.5px;color:var(--ink);margin-bottom:12px;font-weight:700}
+.panel ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.panel ul li{font-size:14.5px;color:#33484f;padding-left:18px;position:relative}
+.panel ul li::before{
+  content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;
+  border-radius:2px;background:var(--teal);
+}
+.panel .mini{font-size:13.4px;color:var(--muted);margin-top:10px}
+.search-box{display:flex;gap:8px}
+.search-box input{
+  flex:1;min-width:0;font-size:14.6px;padding:10px 12px;
+  border:1px solid var(--line);border-radius:9px;background:var(--paper);
+  color:var(--ink-2);font-family:inherit;
+}
+.search-box input:focus{outline:2px solid rgba(15,155,142,.4);outline-offset:1px}
+.search-box button{
+  font-size:14.6px;font-weight:600;padding:10px 16px;border-radius:9px;
+  border:none;background:var(--teal);color:#04262a;cursor:pointer;font-family:inherit;
+}
+.search-box button:hover{background:#2fc0ae}
+#faqResult{font-size:14.2px;margin-top:12px;color:var(--teal-deep);min-height:1.6em}
+
+/* faq */
+.faq-wrap{background:#fff;border-top:1px solid var(--line)}
+.faq{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+details.faq-item{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 20px;
+}
+details.faq-item summary{
+  cursor:pointer;font-weight:700;font-size:15.8px;color:var(--ink);
+  list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center;
+}
+details.faq-item summary::-webkit-details-marker{display:none}
+details.faq-item summary::after{
+  content:"+";color:var(--teal-deep);font-size:20px;font-weight:700;line-height:1;
+}
+details.faq-item[open] summary::after{content:"–"}
+details.faq-item p{font-size:14.6px;color:var(--muted);margin-top:10px}
+
+/* footer */
+footer.site{
+  background:var(--ink);color:#a9c4bf;padding:40px 0 28px;margin-top:8px;
+}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px;margin-bottom:26px}
+.foot-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:17px;margin-bottom:10px}
+.foot-brand .mark{width:28px;height:28px}
+footer.site p{font-size:14px;color:#8fada8;max-width:32em}
+footer.site h4{font-size:14.5px;color:#eaf4f1;margin-bottom:10px;letter-spacing:.5px}
+footer.site ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+footer.site ul a{color:#a9c4bf;font-size:14px}
+footer.site ul a:hover{color:var(--amber)}
+.copy{border-top:1px solid rgba(255,255,255,.1);padding-top:18px;font-size:13px;color:#7f9c97;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:28px}
+  .cards{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .split{grid-template-columns:1fr}
+  aside.side{position:static}
+  .faq{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:620px){
+  body{font-size:15.5px}
+  .nav-inner{min-height:auto;padding:12px 0;gap:10px}
+  nav.main{margin-left:0;width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:2px}
+  nav.main a{white-space:nowrap;font-size:14px;padding:6px 10px}
+  .hero{padding:40px 0 38px}
+  .hero p.lead{font-size:15.4px}
+  section{padding:42px 0}
+  .cards{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .status-row{grid-template-columns:1fr 1fr 1fr;gap:8px}
+  .foot-grid{grid-template-columns:1fr}
+  .btn{width:100%;justify-content:center}
+  .hero-actions{flex-direction:column}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-inner">
+    <a class="logo" href="#top">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#0f9b8e"/>
+        <path d="M14 40 L32 18 L50 40" stroke="#0d1f2b" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="32" cy="47" r="5" fill="#f2b134"/>
+      </svg>
+      <span>海角回家地址</span>
+    </a>
+    <nav class="main" aria-label="主导航">
+      <a href="#entry">访问入口</a>
+      <a href="#howto">查找方法</a>
+      <a href="#explain">地址说明</a>
+      <a href="#faq">常见问题</a>
+      <a href="#notice">安全提示</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">社区入口 · 访问指引</span>
+        <h1>海角回家地址</h1>
+        <p class="lead">海角回家地址是许多访问者在域名变动后首先寻找的信息。本页把入口识别、官方发布渠道、备用线路与访问异常的处理思路集中说明，让你不必反复试错，就能找到当前可用的海角回家地址。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#entry">查看访问入口</a>
+          <a class="btn btn-ghost" href="#howto">了解查找方法</a>
+          <a class="btn btn-ghost" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+        </div>
+      </div>
+      <figure class="hero-figure">
+        <svg viewBox="0 0 420 260" role="img" aria-label="海角回家地址入口示意图：从旧地址经发布页到达新入口">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#0f9b8e"/>
+              <stop offset="1" stop-color="#40d6c4"/>
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="420" height="260" rx="14" fill="#0d2430"/>
+          <path d="M0 200 Q110 150 210 190 T420 170 L420 260 L0 260 Z" fill="#10323d"/>
+          <path d="M0 218 Q120 182 220 210 T420 196 L420 260 L0 260 Z" fill="#0c2a34"/>
+          <circle cx="352" cy="56" r="22" fill="#f2b134" opacity=".9"/>
+          <path d="M40 176 L120 96 L200 176" stroke="url(#g1)" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="120" cy="192" r="9" fill="#f2b134"/>
+          <rect x="232" y="92" width="120" height="86" rx="10" fill="#0f9b8e" opacity=".16" stroke="#40d6c4" stroke-width="2"/>
+          <path d="M252 150 L272 126 L292 150" stroke="#40d6c4" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M262 160 h60" stroke="#40d6c4" stroke-width="4" stroke-linecap="round" opacity=".6"/>
+          <path d="M170 130 h50" stroke="#f2b134" stroke-width="3" stroke-dasharray="6 6"/>
+          <path d="M214 124 l10 6 l-10 6 z" fill="#f2b134"/>
+        </svg>
+        <figcaption>旧地址失效 → 发布页确认 → 进入新入口</figcaption>
+        <div class="status-row">
+          <div><b>3 步</b><span>定位入口</span></div>
+          <div><b>2 类</b><span>备用线路</span></div>
+          <div><b>1 处</b><span>官方发布</span></div>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <section id="entry">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">访问入口</div>
+        <h2>先分清入口的类型，再决定走哪条路</h2>
+        <p>找海角回家地址时，入口通常分成三类。认清类型可以避免把临时跳转页当成长期地址，也能减少无效点击。</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0f9b8e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 11l9-7 9 7"/><path d="M5 10v9h14v-9"/>
+            </svg>
+          </div>
+          <h3>官方发布页</h3>
+          <p>发布页负责公布当前的海角回家地址，是判断其他链接是否可信的基准。它本身一般不做内容展示，只承担公告作用。</p>
+          <span class="tag">优先确认</span>
+        </div>
+        <div class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0f9b8e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/>
+            </svg>
+          </div>
+          <h3>临时跳转页</h3>
+          <p>跳转页只负责把访问者带到新域名，本身不具备长期性。发现跳转页时，应继续记录它指向的目标，而不是收藏跳转页。</p>
+          <span class="tag">短期使用</span>
+        </div>
+        <div class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0f9b8e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 12a8 8 0 0 1 16 0"/><path d="M4 12v5a3 3 0 0 0 3 3h1"/><path d="M20 12v5a3 3 0 0 1-3 3h-1"/>
+            </svg>
+          </div>
+          <h3>备用线路</h3>
+          <p>备用线路用于主地址短时不可达的情况。它和主地址指向同一社区，差别主要在访问速度与稳定性，可按实际连接情况切换。</p>
+          <span class="tag">应急切换</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="steps-wrap">
+    <section id="howto">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">查找方法</div>
+          <h2>四步找到当前可用的海角回家地址</h2>
+          <p>顺序执行以下步骤，可以覆盖大多数地址变动场景。每一步都保留可回溯的记录，便于下次直接复用。</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <h3>确认旧地址状态</h3>
+            <p>先判断是网络问题还是地址问题。同一网络下其他站点正常，而旧地址持续无法打开，才进入下一步。</p>
+          </div>
+          <div class="step">
+            <h3>回到发布页核对</h3>
+            <p>从官方发布页读取公告中的海角回家地址，不要以搜索引擎结果页的标题作为依据。</p>
+          </div>
+          <div class="step">
+            <h3>记录并验证</h3>
+            <p>把新地址写入自己的记录，并实际打开一次，确认页面结构与社区一致后再长期使用。</p>
+          </div>
+          <div class="step">
+            <h3>准备备用线路</h3>
+            <p>同时保存一条备用线路，主地址波动时可快速切换，减少重复查找海角回家地址的时间。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section id="explain">
+    <div class="wrap split">
+      <article class="prose">
+        <h2>地址为什么会变，以及这意味着什么</h2>
+        <p>社区类站点更换访问地址，多数与域名管理、线路调整或访问压力有关。对访问者来说，最直接的影响是收藏夹里的海角回家地址可能突然打不开，而此时页面并不会给出原因说明。</p>
+        <p>因此，把地址当成一次性信息保存是不可靠的。更稳妥的做法是：收藏官方发布页，把当前地址记在可以修改的地方，并了解备用线路的存在。这样即使主地址更换，也能在较短时间内恢复访问。</p>
+
+        <h3>判断一个地址是否可信</h3>
+        <p>打开后先看页面结构与内容是否与原先一致，再看是否出现异常弹窗、额外下载要求或与社区无关的推广内容。出现这些情况时，应停止输入任何账号信息，回到发布页重新核对海角回家地址。</p>
+
+        <h3>访问异常时的排查顺序</h3>
+        <ul>
+          <li>先刷新并更换网络环境，排除本地网络波动的影响。</li>
+          <li>再检查是否为浏览器缓存或扩展拦截导致页面空白。</li>
+          <li>确认旧地址确实失效后，才去发布页获取新的海角回家地址。</li>
+          <li>新地址打开缓慢时，优先尝试备用线路，而不是反复重试同一入口。</li>
+        </ul>
+
+        <div class="note">
+          提示：不要通过来源不明的短链接或群聊转发获取海角回家地址。这类链接可能指向仿冒页面，页面外观相似但目的不同。
+        </div>
+
+        <h3>把入口管理变成习惯</h3>
+        <p>地址变动的频率无法预判，但记录方式可以固定下来。建议保留一份简短清单：官方发布页、当前主地址、一条备用线路，并注明最近一次核对的时间。下次再需要查找海角回家地址时，按清单顺序确认即可，不必从头搜索。</p>
+      </article>
+
+      <aside class="side">
+        <div class="panel">
+          <h3>快速自查</h3>
+          <div class="search-box">
+            <input id="faqInput" type="text" placeholder="输入关键词，如：备用、缓存" aria-label="关键词自查">
+            <button id="faqBtn" type="button">查找</button>
+          </div>
+          <p id="faqResult" role="status" aria-live="polite"></p>
+          <p class="mini">在页面问答中匹配相关条目，帮助定位访问问题。</p>
+        </div>
+        <div class="panel">
+          <h3>建议保存的三项</h3>
+          <ul>
+            <li>官方发布页地址</li>
+            <li>当前可用的海角回家地址</li>
+            <li>至少一条备用线路</li>
+          </ul>
+          <p class="mini">三项分开记录，避免一处失效后全部丢失。</p>
+        </div>
+        <div class="panel">
+          <h3>相关阅读</h3>
+          <ul>
+            <li><a href="#howto">查找海角回家地址的四个步骤</a></li>
+            <li><a href="#entry">入口类型：发布页、跳转页与备用线路</a></li>
+            <li><a href="#notice">识别仿冒页面的几个信号</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <div class="faq-wrap">
+    <section id="faq">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">常见问题</div>
+          <h2>关于海角回家地址的高频疑问</h2>
+          <p>以下问题来自访问者在查找入口时最常遇到的情况，回答按可操作顺序排列。</p>
+        </div>
+        <div class="faq">
+          <details class="faq-item" open>
+            <summary>旧地址打不开，是地址已经更换了吗？</summary>
+            <p>不一定。先换一个网络环境重试，若仍无法打开且其他站点正常，再判断为地址变动。此时应从官方发布页获取新的海角回家地址，而不是在搜索页里逐个尝试。</p>
+          </details>
+          <details class="faq-item">
+            <summary>发布页和社区入口是同一个地址吗？</summary>
+            <p>不是。发布页只公布信息，社区入口才是实际访问页面。保存时应分别记录，避免把发布页当成海角回家地址长期使用。</p>
+          </details>
+          <details class="faq-item">
+            <summary>备用线路和主地址内容一致吗？</summary>
+            <p>备用线路通常指向同一社区，页面内容一致，差别在连接速度与稳定性。主地址无法访问时切换备用线路，是比较省时的处理方式。</p>
+          </details>
+          <details class="faq-item">
+            <summary>页面打开却显示空白或样式错乱怎么办？</summary>
+            <p>先清除浏览器缓存并关闭可能拦截脚本的扩展，再重新加载。若多个网络环境下表现一致，则回到发布页核对海角回家地址是否已更新。</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section id="notice">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">安全提示</div>
+        <h2>查找海角回家地址时，注意这几点</h2>
+        <p>入口信息越分散，仿冒页面越容易混入。下面几条判断标准适用于大多数情况。</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <h3>只认发布页公告</h3>
+          <p>以官方发布页的公告为准，其他来源的海角回家地址都应当作待核实信息，先比对再访问。</p>
+        </div>
+        <div class="card">
+          <h3>警惕额外要求</h3>
+          <p>正常入口不会要求安装来源不明的程序，也不会索取与访问无关的信息。出现此类要求应立即离开。</p>
+        </div>
+        <div class="card">
+          <h3>定期核对记录</h3>
+          <p>每隔一段时间打开一次已保存的地址，确认仍然可用。失效时及时更新，避免临时手忙脚乱。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#0f9b8e"/>
+            <path d="M14 40 L32 18 L50 40" stroke="#0d1f2b" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="32" cy="47" r="5" fill="#f2b134"/>
+          </svg>
+          <span>海角回家地址</span>
+        </div>
+        <p>本页围绕海角回家地址的查找与核对展开，说明入口类型、查找步骤与访问异常的排查思路，供访问者按需参考。</p>
+      </div>
+      <div>
+        <h4>栏目导航</h4>
+        <ul>
+          <li><a href="#entry">访问入口</a></li>
+          <li><a href="#howto">查找方法</a></li>
+          <li><a href="#explain">地址说明</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>相关内容</h4>
+        <ul>
+          <li><a href="#notice">安全提示</a></li>
+          <li><a href="#explain">备用线路说明</a></li>
+          <li><a href="#entry">发布页的作用</a></li>
+          <li><a href="#top">回到顶部</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      <span>海角回家地址 · 访问指引页面</span>
+      <span>入口信息以官方发布页公告为准</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var items = [
+    {k:['备用','线路','切换'], t:'备用线路与主地址内容一致，主要用于主地址不可达时切换，建议至少保存一条。'},
+    {k:['缓存','空白','样式','浏览器'], t:'先清除浏览器缓存、关闭拦截脚本的扩展，再重新加载页面。'},
+    {k:['发布页','公告','官方'], t:'发布页只公布入口信息，是核对海角回家地址是否更新的基准。'},
+    {k:['旧地址','打不开','失效'], t:'先换网络环境重试；若其他站点正常且旧地址持续无法打开，再去发布页获取新地址。'},
+    {k:['仿冒','安全','风险'], t:'遇到额外下载要求、来源不明短链接或与社区无关的推广内容，应停止访问并重新核对。'}
+  ];
+  var input = document.getElementById('faqInput');
+  var btn = document.getElementById('faqBtn');
+  var out = document.getElementById('faqResult');
+  function run(){
+    var q = (input.value || '').trim().toLowerCase();
+    if(!q){ out.textContent = '请输入关键词，例如“备用”“缓存”“发布页”。'; return; }
+    var hit = null;
+    for(var i=0;i<items.length;i++){
+      for(var j=0;j<items[i].k.length;j++){
+        if(q.indexOf(items[i].k[j].toLowerCase()) > -1 || items[i].k[j].toLowerCase().indexOf(q) > -1){ hit = items[i]; break; }
+      }
+      if(hit) break;
+    }
+    out.textContent = hit ? hit.t : '未匹配到条目，可尝试“备用”“缓存”“发布页”“安全”等关键词。';
+  }
+  btn.addEventListener('click', run);
+  input.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); run(); } });
+})();
+</script>
+
+</body>
+</html>
