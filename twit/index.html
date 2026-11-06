@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Twitter每日大赛-每日大赛热门投稿_Twitter大赛吃瓜黑料爆料</title>
+<meta name="description" content="Twitter每日大赛汇聚每日热门投稿与吃瓜黑料爆料，按日期浏览大赛看点、热门线索与网友讨论，快速了解Twitter每日大赛当天最受关注的内容。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111a2b'/%3E%3Ctext x='32' y='42' font-size='30' font-family='Arial' font-weight='bold' text-anchor='middle' fill='%23f6c453'%3ET%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0d1220;
+  --bg2:#131a2c;
+  --card:#182135;
+  --line:#26314b;
+  --txt:#e8ecf5;
+  --muted:#9aa6c0;
+  --gold:#f6c453;
+  --red:#ef5b6b;
+  --blue:#5aa9e6;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  background:var(--bg);color:var(--txt);line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+
+/* header */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(13,18,32,.88);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;height:66px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;letter-spacing:.5px;white-space:nowrap}
+.logo svg{flex:0 0 auto}
+.logo .brand{color:var(--txt)}
+.logo .brand em{color:var(--gold);font-style:normal}
+.navlinks{display:flex;gap:6px;flex-wrap:wrap}
+.navlinks a{
+  font-size:14px;color:var(--muted);padding:7px 12px;border-radius:8px;transition:.2s;
+}
+.navlinks a:hover{color:var(--txt);background:var(--card)}
+.navlinks a.cta{background:var(--gold);color:#1a1405;font-weight:700}
+.navlinks a.cta:hover{background:#ffd772;color:#1a1405}
+
+/* hero */
+.hero{
+  position:relative;overflow:hidden;
+  padding:64px 0 54px;
+  background:
+    radial-gradient(700px 320px at 85% -10%, rgba(246,196,83,.16), transparent 70%),
+    radial-gradient(600px 300px at 8% 110%, rgba(90,169,230,.14), transparent 70%),
+    var(--bg2);
+  border-bottom:1px solid var(--line);
+}
+.hero .wrap{position:relative;z-index:2}
+.tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;color:var(--gold);border:1px solid rgba(246,196,83,.45);
+  padding:5px 12px;border-radius:999px;margin-bottom:20px;background:rgba(246,196,83,.07);
+}
+.tag i{width:7px;height:7px;border-radius:50%;background:var(--red);display:inline-block;animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+h1{
+  font-size:clamp(28px,4.6vw,46px);line-height:1.2;font-weight:900;letter-spacing:.5px;
+  margin-bottom:18px;
+}
+h1 span{color:var(--gold)}
+.hero p.lead{font-size:16px;color:var(--muted);max-width:680px;margin-bottom:28px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:34px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 22px;border-radius:10px;font-size:15px;font-weight:700;
+  transition:.2s;border:1px solid transparent;
+}
+.btn-main{background:var(--gold);color:#1a1405}
+.btn-main:hover{background:#ffd772}
+.btn-ghost{border-color:var(--line);color:var(--txt);background:var(--card)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.btn[aria-disabled="true"]{opacity:.55;pointer-events:none}
+.hero-stats{display:flex;gap:34px;flex-wrap:wrap}
+.hero-stats div{font-size:13px;color:var(--muted)}
+.hero-stats b{display:block;font-size:24px;color:var(--txt);font-weight:800;line-height:1.3}
+.hero-stats b.gold{color:var(--gold)}
+
+/* sections */
+section{padding:58px 0}
+.sec-head{margin-bottom:30px;max-width:720px}
+.sec-head .kicker{font-size:13px;letter-spacing:2px;color:var(--gold);font-weight:700;margin-bottom:8px;text-transform:uppercase}
+h2{font-size:clamp(21px,2.8vw,28px);font-weight:800;margin-bottom:10px;line-height:1.35}
+.sec-head p{color:var(--muted);font-size:15px}
+
+/* board list */
+.board{display:grid;grid-template-columns:1fr;gap:14px}
+.entry{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:20px 22px;display:grid;grid-template-columns:76px 1fr auto;gap:18px;align-items:center;
+  transition:.2s;
+}
+.entry:hover{border-color:rgba(246,196,83,.5);transform:translateY(-2px)}
+.date-chip{
+  text-align:center;background:rgba(246,196,83,.1);border:1px solid rgba(246,196,83,.35);
+  border-radius:10px;padding:8px 4px;color:var(--gold);
+}
+.date-chip b{display:block;font-size:20px;line-height:1.1}
+.date-chip span{font-size:11px;color:var(--muted)}
+.entry h3{font-size:16.5px;font-weight:700;margin-bottom:5px}
+.entry p{font-size:14px;color:var(--muted)}
+.badge{
+  font-size:12px;padding:3px 10px;border-radius:999px;white-space:nowrap;
+  border:1px solid var(--line);color:var(--muted);
+}
+.badge.hot{color:var(--red);border-color:rgba(239,91,107,.5);background:rgba(239,91,107,.1)}
+.badge.new{color:var(--blue);border-color:rgba(90,169,230,.5);background:rgba(90,169,230,.1)}
+
+/* cards */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;
+  display:flex;flex-direction:column;gap:10px;transition:.2s;
+}
+.card:hover{border-color:rgba(246,196,83,.45)}
+.card .ico{
+  width:42px;height:42px;border-radius:11px;display:grid;place-items:center;
+  background:rgba(246,196,83,.12);color:var(--gold);margin-bottom:4px;
+}
+.card h3{font-size:17px;font-weight:800}
+.card p{font-size:14px;color:var(--muted)}
+
+/* long read */
+.read{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.read-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:40px}
+.read h3{font-size:18px;font-weight:800;margin:26px 0 8px;color:var(--gold)}
+.read h3:first-child{margin-top:0}
+.read p{font-size:15px;color:#c3cbdc;margin-bottom:12px}
+.aside{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;align-self:start;
+}
+.aside h4{font-size:15px;font-weight:800;margin-bottom:14px}
+.aside ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.aside li{font-size:14px;color:var(--muted);padding-left:18px;position:relative}
+.aside li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);position:absolute;left:0;top:10px}
+.aside li b{color:var(--txt);font-weight:700}
+
+/* faq */
+.faq{display:grid;gap:12px}
+details{
+  background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;
+}
+details[open]{border-color:rgba(246,196,83,.45)}
+summary{cursor:pointer;font-weight:700;font-size:15.5px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--gold);font-size:20px;font-weight:400;line-height:1}
+details[open] summary::after{content:"−"}
+details p{font-size:14.5px;color:var(--muted);margin-top:10px}
+
+/* footer */
+footer{background:#0a0f1b;border-top:1px solid var(--line);padding:44px 0 30px}
+.foot-top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;margin-bottom:28px}
+.foot-brand p{font-size:13.5px;color:var(--muted);max-width:340px;margin-top:10px}
+.foot-cols{display:flex;gap:56px;flex-wrap:wrap}
+.foot-cols h5{font-size:13px;color:var(--gold);letter-spacing:1px;margin-bottom:12px;font-weight:700}
+.foot-cols a{display:block;font-size:14px;color:var(--muted);margin-bottom:8px}
+.foot-cols a:hover{color:var(--txt)}
+.copy{border-top:1px solid var(--line);padding-top:20px;font-size:13px;color:#6d7891;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+
+/* responsive */
+@media(max-width:900px){
+  .grid3{grid-template-columns:1fr 1fr}
+  .read-grid{grid-template-columns:1fr;gap:30px}
+}
+@media(max-width:700px){
+  .nav{height:auto;padding:12px 0;flex-direction:column;align-items:flex-start;gap:10px}
+  .navlinks{width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:2px}
+  .navlinks::-webkit-scrollbar{display:none}
+  .hero{padding:42px 0 40px}
+  .hero-stats{gap:22px}
+  .hero-stats b{font-size:20px}
+  .entry{grid-template-columns:64px 1fr;gap:14px;padding:16px}
+  .entry .badge{grid-column:2;justify-self:start}
+  .grid3{grid-template-columns:1fr}
+  section{padding:44px 0}
+  .foot-cols{gap:34px}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="Twitter每日大赛首页">
+      <svg width="30" height="30" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#f6c453"/>
+        <path d="M15 20h34M15 32h22M15 44h28" stroke="#0d1220" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+      <span class="brand">Twitter<em>每日大赛</em></span>
+    </a>
+    <nav class="navlinks" aria-label="主导航">
+      <a href="#today">今日看点</a>
+      <a href="#board">每日榜单</a>
+      <a href="#watch">看点分类</a>
+      <a href="#read">大赛解读</a>
+      <a href="#faq">常见疑问</a>
+      <a class="cta" href="#board">看今日大赛</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="tag"><i></i>每日更新 · 今日大赛已开榜</span>
+      <h1>Twitter每日大赛</h1>
+      <p class="lead">Twitter每日大赛把每天散落在时间线上的热门投稿集中到一处：按日期排榜、按看点分类，记录当天的热门线索与网友讨论，让你不必翻遍动态也能跟上节奏。</p>
+      <div class="hero-actions">
+        <a class="btn btn-main" href="#board">查看今日榜单
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#watch">浏览看点分类</a>
+      </div>
+      <div class="hero-stats">
+        <div><b class="gold">每日</b>榜单更新频率</div>
+        <div><b>4</b>看点分类栏目</div>
+        <div><b>3</b>分钟看完当天大赛</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TODAY -->
+  <section id="today">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Today</div>
+        <h2>今日看点：Twitter每日大赛的三条主线</h2>
+        <p>一条大赛线索从出现到被广泛讨论，通常经历投稿、扩散、争议三个阶段。今日看点按这三条主线梳理，方便你快速判断该看什么。</p>
+      </div>
+      <div class="grid3">
+        <div class="card">
+          <div class="ico">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 8l7-5 7 5"/></svg>
+          </div>
+          <h3>新投稿的上升速度</h3>
+          <p>大赛的起点往往是几条刚发布的投稿。Twitter每日大赛关注它们在短时间内的转发与讨论增量，判断哪条线索正在升温。</p>
+        </div>
+        <div class="card">
+          <div class="ico">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18V9M10 18V5M16 18v-6M22 18V8"/></svg>
+          </div>
+          <h3>热门线索的扩散范围</h3>
+          <p>同一条大赛内容可能先在小圈子流传，再被大号转发。扩散路径决定了它的讨论深度，也决定了它能否进入当日榜单。</p>
+        </div>
+        <div class="card">
+          <div class="ico">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.6-7-10a7 7 0 0 1 14 0c0 5.4-7 10-7 10z"/><circle cx="12" cy="11" r="2.6"/></svg>
+          </div>
+          <h3>争议点的后续走向</h3>
+          <p>吃瓜黑料爆料类内容常伴随不同说法。大赛看点会标注争议所在，并提示哪些细节仍待当事人或更多来源确认。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOARD -->
+  <section id="board" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Board</div>
+        <h2>每日榜单：按日期读Twitter每日大赛</h2>
+        <p>榜位由当天讨论热度与线索完整度共同决定。以下为近期榜单示例，日期与条目对应当日大赛的看点摘要。</p>
+      </div>
+      <div class="board">
+        <a class="entry" href="#today">
+          <div class="date-chip"><b>今日</b><span>更新中</span></div>
+          <div>
+            <h3>Twitter每日大赛今日榜：多条投稿集中发酵</h3>
+            <p>今日大赛以投稿增量为主，其中两条线索在午后进入快速扩散阶段。</p>
+          </div>
+          <span class="badge hot">热门</span>
+        </a>
+        <a class="entry" href="#watch">
+          <div class="date-chip"><b>昨日</b><span>已归档</span></div>
+          <div>
+            <h3>昨日大赛盘点：一条爆料引发持续讨论</h3>
+            <p>争议点集中在原始出处，网友对截图来源提出不同解读，讨论延续至次日。</p>
+          </div>
+          <span class="badge">已归档</span>
+        </a>
+        <a class="entry" href="#read">
+          <div class="date-chip"><b>本周</b><span>汇总</span></div>
+          <div>
+            <h3>本周大赛脉络：从单条投稿到连续话题</h3>
+            <p>连续数日的线索相互关联，形成一条可追溯的时间线，适合从头补齐背景。</p>
+          </div>
+          <span class="badge new">新汇总</span>
+        </a>
+        <a class="entry" href="#faq">
+          <div class="date-chip"><b>说明</b><span>规则</span></div>
+          <div>
+            <h3>大赛条目收录与标注方式</h3>
+            <p>说明榜单如何判断热度、如何标注未确认内容，以及归档条目的保留方式。</p>
+          </div>
+          <span class="badge">规则</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WATCH -->
+  <section id="watch" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Category</div>
+        <h2>看点分类：按内容类型筛选大赛</h2>
+        <p>不同访问者关心的角度并不相同。分类把当日大赛拆成四类，便于按兴趣直接进入对应内容。</p>
+      </div>
+      <div class="grid3">
+        <div class="card">
+          <h3>吃瓜现场</h3>
+          <p>围绕人物、圈层与事件的讨论型内容，侧重还原前后经过，适合想快速了解梗概的读者。</p>
+        </div>
+        <div class="card">
+          <h3>黑料线索</h3>
+          <p>以截图、录屏与转述为主的线索条目。页面会标注来源是否单一，避免把未证实内容当作结论。</p>
+        </div>
+        <div class="card">
+          <h3>爆料追踪</h3>
+          <p>对同一话题多日变动的连续记录，展示说法如何变化、哪些细节被补充或被推翻。</p>
+        </div>
+        <div class="card">
+          <h3>反转与澄清</h3>
+          <p>当事人回应、原图溯源与后续更正。大赛的完整阅读往往需要把这一栏和前面的线索对照看。</p>
+        </div>
+        <div class="card">
+          <h3>网友热议</h3>
+          <p>评论区高频观点与分歧点汇编，呈现讨论中的主要立场，而非替任何一方下判断。</p>
+        </div>
+        <div class="card">
+          <h3>归档回顾</h3>
+          <p>已降温的旧条目集中存放，用于回查时间线，也方便新读者补齐此前大赛的背景。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- READ -->
+  <section id="read" class="read">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Read</div>
+        <h2>大赛解读：看懂一条线索的完整链路</h2>
+      </div>
+      <div class="read-grid">
+        <div>
+          <h3>投稿是起点，不是结论</h3>
+          <p>Twitter每日大赛的每条条目都从一条投稿开始，但投稿本身只代表发布者的说法。榜单在收录时会区分“已发布”与“已确认”，前者说明内容存在，后者才代表有多方来源相互印证。读者在浏览时，先看标注状态，再判断可信程度。</p>
+          <h3>热度不等于真实</h3>
+          <p>讨论量高只说明关注的人多，并不自动说明内容成立。大赛把热度与线索完整度分开评估：一条转发量很高的内容，如果只有单一来源，仍会被归入待确认一类。这样的处理让榜单更接近阅读索引，而不是结论清单。</p>
+          <h3>连续几天看同一条线</h3>
+          <p>不少大赛话题会横跨数日。第一天是原始投稿，第二天出现补充材料，第三天可能有当事人回应。把这几天的条目连着看，才能发现哪些细节被保留、哪些说法被修正。归档回顾正是为这种连续阅读准备的。</p>
+          <h3>保持克制的阅读习惯</h3>
+          <p>吃瓜和爆料天然带有情绪，但页面呈现应当尽量冷静：标明出处、标注时间、区分转述与原文。Twitter每日大赛希望读者在跟进热点的同时，保留对未证实信息的基本警惕，不急于把讨论当作定论。</p>
+        </div>
+        <aside class="aside">
+          <h4>阅读前先确认这四点</h4>
+          <ul>
+            <li><b>发布时间</b>：是否为当日内容，是否属于旧事重提。</li>
+            <li><b>来源数量</b>：单一截图与多方说法，可信度不同。</li>
+            <li><b>标注状态</b>：已发布、待确认、已澄清分别对应不同处理。</li>
+            <li><b>后续条目</b>：同一条线是否有更新或反转记录。</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">FAQ</div>
+        <h2>常见疑问</h2>
+        <p>关于榜单更新、内容标注与浏览方式，这里集中回答几个经常被问到的问题。</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Twitter每日大赛多久更新一次？</summary>
+          <p>榜单按日更新，当日条目在讨论形成后陆续补充，归档条目保持原样不再修改，以便回查当时的记录状态。</p>
+        </details>
+        <details>
+          <summary>榜单上的内容都经过确认吗？</summary>
+          <p>并非如此。条目会标注来源数量与状态，单一来源的内容会明确提示待确认。页面呈现的是讨论与线索本身，不替读者下结论。</p>
+        </details>
+        <details>
+          <summary>为什么同一条话题会出现在多个分类里？</summary>
+          <p>一条线索可能同时具备爆料、热议与后续澄清等侧面。分类是按阅读角度划分的，同一条目在不同栏目出现，承担的是不同的信息任务。</p>
+        </details>
+        <details>
+          <summary>可以只看某一天的大赛吗？</summary>
+          <p>可以。每日榜单按日期排列，点击对应日期条目即可查看当天看点摘要；需要背景时，再进入归档回顾补齐前几天的内容。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="logo" href="#top">
+          <svg width="28" height="28" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#f6c453"/>
+            <path d="M15 20h34M15 32h22M15 44h28" stroke="#0d1220" stroke-width="5" stroke-linecap="round"/>
+          </svg>
+          <span class="brand">Twitter<em>每日大赛</em></span>
+        </a>
+        <p>Twitter每日大赛以日期为线索，汇集每日热门投稿、吃瓜黑料爆料与后续澄清，帮助读者按自己的节奏跟进当天大赛。</p>
+      </div>
+      <div class="foot-cols">
+        <div>
+          <h5>浏览</h5>
+          <a href="#today">今日看点</a>
+          <a href="#board">每日榜单</a>
+          <a href="#watch">看点分类</a>
+        </div>
+        <div>
+          <h5>了解</h5>
+          <a href="#read">大赛解读</a>
+          <a href="#faq">常见疑问</a>
+        </div>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© Twitter每日大赛 · 内容为当日讨论与线索记录，未证实信息请谨慎对待</span>
+      <a href="#top">回到顶部</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
