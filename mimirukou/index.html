@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>秘密入口-秘密入口导航_隐秘资源入口合集</title>
+<meta name="description" content="秘密入口是一个汇集各类隐秘资源导航的主题首页，整理公开可查的小众站点与工具入口，说明访问方式、分类线索与使用注意事项，帮助你按需找到合适的秘密入口。">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e1726'/%3E%3Cpath d='M18 34v-4a14 14 0 0 1 28 0v4' fill='none' stroke='%235eead4' stroke-width='5' stroke-linecap='round'/%3E%3Crect x='16' y='32' width='32' height='22' rx='5' fill='%235eead4'/%3E%3Ccircle cx='32' cy='42' r='4' fill='%230e1726'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#0e1726;
+  --ink-soft:#1b2740;
+  --teal:#5eead4;
+  --teal-deep:#17a08c;
+  --paper:#f5f8fa;
+  --card:#ffffff;
+  --line:#dde6ec;
+  --text:#20303f;
+  --muted:#5c6f7d;
+  --radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  background:var(--paper);
+  color:var(--text);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 22px;}
+
+/* header */
+.site-header{
+  background:var(--ink);
+  color:#eaf3f7;
+  position:sticky;top:0;z-index:50;
+  border-bottom:1px solid rgba(94,234,212,.18);
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;padding:14px 0;flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:11px;}
+.brand svg{width:38px;height:38px;flex:none;}
+.brand-text{
+  font-size:1.22rem;font-weight:700;letter-spacing:.06em;color:#fff;
+}
+.nav{display:flex;gap:6px;flex-wrap:wrap;}
+.nav a{
+  font-size:.93rem;padding:7px 13px;border-radius:999px;
+  color:#bfd3dc;transition:.2s;
+}
+.nav a:hover,.nav a:focus-visible{background:rgba(94,234,212,.14);color:var(--teal);}
+.nav a.primary{background:var(--teal);color:var(--ink);font-weight:600;}
+.nav a.primary:hover{background:#8ff3e4;color:var(--ink);}
+
+/* hero */
+.hero{
+  background:
+    radial-gradient(900px 380px at 82% -10%,rgba(94,234,212,.22),transparent 62%),
+    linear-gradient(160deg,#0e1726 0%,#16233a 58%,#0e1726 100%);
+  color:#eaf3f7;
+  padding:64px 0 58px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;right:-90px;bottom:-120px;
+  width:340px;height:340px;border-radius:50%;
+  border:1px solid rgba(94,234,212,.22);
+  box-shadow:0 0 0 40px rgba(94,234,212,.05),0 0 0 90px rgba(94,234,212,.03);
+  pointer-events:none;
+}
+.hero-grid{display:grid;grid-template-columns:1.35fr .9fr;gap:44px;align-items:center;position:relative;z-index:1;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.8rem;letter-spacing:.16em;color:var(--teal);
+  border:1px solid rgba(94,234,212,.4);border-radius:999px;
+  padding:5px 14px;margin-bottom:20px;
+}
+h1{
+  font-size:clamp(2rem,4.6vw,3.1rem);
+  line-height:1.24;font-weight:800;letter-spacing:.03em;color:#fff;
+}
+.hero p.lead{
+  margin-top:18px;font-size:1.02rem;color:#c3d5de;max-width:34em;
+}
+.hero-actions{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 24px;border-radius:999px;font-weight:600;font-size:.96rem;
+  transition:.2s;border:1px solid transparent;
+}
+.btn-main{background:var(--teal);color:var(--ink);}
+.btn-main:hover{background:#8ff3e4;}
+.btn-ghost{border-color:rgba(234,243,247,.35);color:#eaf3f7;}
+.btn-ghost:hover{border-color:var(--teal);color:var(--teal);}
+.hero-panel{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(94,234,212,.24);
+  border-radius:var(--radius);
+  padding:22px 22px 20px;
+  backdrop-filter:blur(3px);
+}
+.hero-panel h2{font-size:.95rem;color:var(--teal);letter-spacing:.08em;font-weight:600;margin-bottom:14px;}
+.hero-panel ul{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.hero-panel li{display:flex;gap:10px;font-size:.9rem;color:#c3d5de;align-items:flex-start;}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--teal);margin-top:.55em;flex:none;}
+
+/* sections */
+section{padding:56px 0;}
+.sec-head{max-width:44em;margin-bottom:32px;}
+.sec-kicker{
+  font-size:.78rem;letter-spacing:.18em;color:var(--teal-deep);
+  font-weight:700;text-transform:uppercase;
+}
+h2.sec-title{
+  font-size:clamp(1.4rem,2.6vw,1.85rem);
+  color:var(--ink);font-weight:800;margin-top:8px;line-height:1.4;
+}
+.sec-head p{margin-top:12px;color:var(--muted);font-size:.98rem;}
+
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 22px;display:flex;flex-direction:column;gap:12px;
+  transition:.22s;
+}
+.card:hover{border-color:var(--teal);transform:translateY(-3px);box-shadow:0 12px 28px -18px rgba(14,23,38,.5);}
+.card .icon{
+  width:42px;height:42px;border-radius:12px;background:#e6f7f4;
+  display:flex;align-items:center;justify-content:center;flex:none;
+}
+.card .icon svg{width:22px;height:22px;}
+.card h3{font-size:1.06rem;color:var(--ink);font-weight:700;}
+.card p{font-size:.92rem;color:var(--muted);flex:1;}
+.card .tag{
+  align-self:flex-start;font-size:.76rem;letter-spacing:.05em;
+  color:var(--teal-deep);background:#e6f7f4;border-radius:999px;padding:3px 11px;font-weight:600;
+}
+
+/* list block */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start;}
+.article-block h3{font-size:1.1rem;color:var(--ink);margin-bottom:10px;font-weight:700;}
+.article-block p{font-size:.96rem;color:var(--text);margin-bottom:14px;}
+.article-block p:last-child{margin-bottom:0;}
+.ticks{list-style:none;display:flex;flex-direction:column;gap:14px;}
+.ticks li{display:flex;gap:12px;font-size:.94rem;color:var(--text);}
+.ticks .num{
+  flex:none;width:26px;height:26px;border-radius:8px;background:var(--ink);color:var(--teal);
+  font-size:.82rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:2px;
+}
+.ticks strong{color:var(--ink);}
+
+/* faq */
+.faq{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.faq-list{display:flex;flex-direction:column;gap:14px;max-width:56em;}
+details{
+  border:1px solid var(--line);border-radius:12px;padding:16px 20px;background:var(--paper);
+}
+details[open]{border-color:var(--teal);background:#fff;}
+summary{
+  cursor:pointer;font-weight:700;color:var(--ink);font-size:.98rem;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+summary::-webkit-details-marker{display:none;}
+summary::after{content:"+";color:var(--teal-deep);font-size:1.2rem;font-weight:600;}
+details[open] summary::after{content:"–";}
+details p{margin-top:10px;font-size:.93rem;color:var(--muted);}
+
+/* download strip */
+.dl{
+  background:var(--ink);color:#eaf3f7;border-radius:var(--radius);
+  padding:34px 32px;display:flex;align-items:center;justify-content:space-between;
+  gap:24px;flex-wrap:wrap;
+}
+.dl h3{font-size:1.18rem;color:#fff;margin-bottom:6px;font-weight:700;}
+.dl p{font-size:.92rem;color:#b9cdd7;max-width:40em;}
+.btn-dl{
+  background:var(--teal);color:var(--ink);font-weight:700;
+  padding:12px 28px;border-radius:999px;pointer-events:none;opacity:.92;
+}
+
+/* footer */
+.site-footer{background:var(--ink);color:#9fb6c2;padding:36px 0 30px;font-size:.88rem;}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center;}
+.footer-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;letter-spacing:.05em;}
+.footer-brand svg{width:26px;height:26px;}
+.footer-links{display:flex;gap:18px;flex-wrap:wrap;}
+.footer-links a:hover{color:var(--teal);}
+.footer-note{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);color:#7d94a1;font-size:.82rem;line-height:1.7;}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:32px;}
+  .cards{grid-template-columns:1fr 1fr;}
+  .split{grid-template-columns:1fr;gap:28px;}
+}
+@media (max-width:620px){
+  .hero{padding:44px 0 40px;}
+  section{padding:40px 0;}
+  .cards{grid-template-columns:1fr;}
+  .nav a{padding:6px 10px;font-size:.87rem;}
+  .dl{padding:26px 22px;}
+  .header-inner{gap:10px;}
+  .brand-text{font-size:1.08rem;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="秘密入口 首页">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#16233a"/>
+        <path d="M18 34v-4a14 14 0 0 1 28 0v4" fill="none" stroke="#5eead4" stroke-width="5" stroke-linecap="round"/>
+        <rect x="16" y="32" width="32" height="22" rx="5" fill="#5eead4"/>
+        <circle cx="32" cy="42" r="4" fill="#16233a"/>
+      </svg>
+      <span class="brand-text">秘密入口</span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#top" class="primary">首页</a>
+      <a href="#catalog">入口分类</a>
+      <a href="#guide">访问说明</a>
+      <a href="#faq">常见问答</a>
+      <a href="#download">资源下载</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">隐秘资源 · 导航合集</span>
+        <h1>秘密入口</h1>
+        <p class="lead">秘密入口把散落在网络角落的小众站点、工具与资料入口按类别归拢到一页，说明每个秘密入口的用途、访问条件与注意事项，让你不必盲目搜索也能找到想要的那扇门。</p>
+        <div class="hero-actions">
+          <a class="btn btn-main" href="#catalog">浏览入口分类</a>
+          <a class="btn btn-ghost" href="#guide">了解访问方式</a>
+        </div>
+      </div>
+      <aside class="hero-panel" aria-label="入口使用提示">
+        <h2>快速提示</h2>
+        <ul>
+          <li><span class="dot"></span>先确认需求类别，再从对应分类进入</li>
+          <li><span class="dot"></span>部分秘密入口需要注册或邀请码</li>
+          <li><span class="dot"></span>收藏前核对域名，避免仿冒页面</li>
+          <li><span class="dot"></span>入口状态会变化，失效时回到本页查更新</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section id="catalog">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-kicker">Catalog</span>
+        <h2 class="sec-title">按用途划分的秘密入口分类</h2>
+        <p>不同秘密入口对应完全不同的需求。下面按使用场景分组，每一类都标注了大致门槛，方便你先判断是否值得花时间尝试。</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#17a08c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>
+            </svg>
+          </div>
+          <span class="tag">低门槛</span>
+          <h3>小众搜索与索引</h3>
+          <p>面向垂直领域的检索工具，收录范围窄但命中精度高，适合查找公开文档、往期存档与冷门资料。这类秘密入口多数无需登录，直接打开即可使用。</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#17a08c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 19V7a2 2 0 0 1 2-2h5l2 3h5a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/>
+            </svg>
+          </div>
+          <span class="tag">中门槛</span>
+          <h3>资料库与档案站</h3>
+          <p>以专题方式组织的公开档案，通常提供目录与检索框。进入这类秘密入口前建议先读站内说明，理解收录边界，再决定是否依赖其内容。</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#17a08c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+            </svg>
+          </div>
+          <span class="tag">需注册</span>
+          <h3>邀请制社区</h3>
+          <p>需要邀请码或审核才能进入的讨论空间。秘密入口的申请流程一般写在公开页上，耐心读完规则再提交，比反复试错更省时间。</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#17a08c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 20h16"/>
+            </svg>
+          </div>
+          <span class="tag">低门槛</span>
+          <h3>工具与在线服务</h3>
+          <p>无需安装的单页工具，处理格式转换、文本比对、批量重命名等琐碎任务。此类秘密入口的页面往往极简，功能集中在首屏。</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#17a08c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 12h4l3-7 4 14 3-7h4"/>
+            </svg>
+          </div>
+          <span class="tag">中门槛</span>
+          <h3>实时数据看板</h3>
+          <p>把公开指标做成可视化页面的站点，适合观察趋势而非查单一答案。使用前先确认数据更新频率，避免拿旧数字下结论。</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#17a08c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3l8 4v6c0 4.5-3.4 7.4-8 8-4.6-.6-8-3.5-8-8V7z"/>
+            </svg>
+          </div>
+          <span class="tag">需验证</span>
+          <h3>安全与隐私自查</h3>
+          <p>用于检查账号暴露情况、链接指向与文件信息的入口。这类秘密入口涉及个人信息，使用时应只输入必要范围的数据。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="guide">
+    <div class="wrap split">
+      <div class="article-block">
+        <span class="sec-kicker">How to use</span>
+        <h2 class="sec-title">怎样判断一个秘密入口是否值得进入</h2>
+        <p>秘密入口这个说法本身并不神秘，它更多指那些没有大规模推广、靠口碑传播的站点。判断标准可以很朴素：页面是否写清楚自己提供什么，是否标注更新时间和联系方式，是否要求与功能不相称的权限。</p>
+        <p>真正可靠的秘密入口通常不需要你关闭安全软件，也不会在首次访问时弹出多层跳转。遇到要求输入与用途无关信息的页面，直接退出即可。把这些判断标准记住，比收藏一百个链接更有用。</p>
+        <p>本页对秘密入口的收录以公开可查为原则，不承诺长期有效。站点可能改版、迁移或停止维护，发现异常时回到这里查看分类说明，有助于快速判断是入口失效还是网络问题。</p>
+      </div>
+      <ol class="ticks">
+        <li><span class="num">1</span><div><strong>先看说明页。</strong>多数站点会在首页或页脚写清用途、数据来源与限制条件，读完再决定是否深入。</div></li>
+        <li><span class="num">2</span><div><strong>核对域名拼写。</strong>仿冒页常在字母上做手脚，秘密入口一旦指向错误域名，风险远大于收益。</div></li>
+        <li><span class="num">3</span><div><strong>控制授权范围。</strong>只授予完成当前任务必需的权限，事后及时撤销，不给长期访问留口子。</div></li>
+        <li><span class="num">4</span><div><strong>记录可用状态。</strong>给常用秘密入口做简单备注，写明上次可用时间，减少重复试错。</div></li>
+        <li><span class="num">5</span><div><strong>保留退出路径。</strong>任何要求你无法中止的页面都值得警惕，随时能离开是基本要求。</div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-kicker">FAQ</span>
+        <h2 class="sec-title">关于秘密入口的常见问题</h2>
+        <p>下面几条来自访问者最常提出的疑问，答案以本页实际提供的内容为范围。</p>
+      </div>
+      <div class="faq-list">
+        <details open>
+          <summary>秘密入口是免费的吗？</summary>
+          <p>本页收录的多数秘密入口可免费访问，但部分社区类站点需要邀请码或审核，个别工具提供付费增值功能。具体以各站点自身说明为准，本页不代为承诺。</p>
+        </details>
+        <details>
+          <summary>为什么有的秘密入口打不开？</summary>
+          <p>常见原因是站点迁移、临时维护或域名更换。建议先刷新与更换网络重试，仍无响应则视为该入口暂时失效，可查看本页分类说明中的替代方向。</p>
+        </details>
+        <details>
+          <summary>使用这些秘密入口需要注意什么？</summary>
+          <p>不要在来源不明的页面输入账号密码，不要关闭浏览器安全提示，涉及个人信息的操作尽量在小范围内完成。遇到要求额外权限的情况，先退出再核对。</p>
+        </details>
+        <details>
+          <summary>如何向本页推荐新的秘密入口？</summary>
+          <p>可在页尾的联系入口提交站点地址与用途说明。收录前会核对页面是否公开可查、是否说明自身用途，不符合这两点的暂不列入分类。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="download">
+    <div class="wrap">
+      <div class="dl">
+        <div>
+          <h3>入口清单离线版</h3>
+          <p>把本页的分类结构与使用提示整理成一份清单，方便在没有网络时对照查阅。文件内容与页面保持一致，后续更新以本页为准。</p>
+        </div>
+        <a class="btn-dl" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#16233a"/>
+          <path d="M18 34v-4a14 14 0 0 1 28 0v4" fill="none" stroke="#5eead4" stroke-width="5" stroke-linecap="round"/>
+          <rect x="16" y="32" width="32" height="22" rx="5" fill="#5eead4"/>
+          <circle cx="32" cy="42" r="4" fill="#16233a"/>
+        </svg>
+        秘密入口
+      </div>
+      <nav class="footer-links" aria-label="页尾导航">
+        <a href="#catalog">入口分类</a>
+        <a href="#guide">访问说明</a>
+        <a href="#faq">常见问答</a>
+        <a href="#download">资源下载</a>
+      </nav>
+    </div>
+    <p class="footer-note">秘密入口是一个资源导航主题页面，仅整理公开可查的站点信息，不对第三方站点的内容与可用性作出保证。访问前请自行判断风险，保护个人信息安全。</p>
+  </div>
+</footer>
+
+</body>
+</html>
